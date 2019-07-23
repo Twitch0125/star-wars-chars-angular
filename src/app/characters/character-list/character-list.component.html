@@ -1,8 +1,32 @@
-<div class="flex column items-center">
-  <h1>{{ title }}</h1>
-  <div *ngFor="let character of characters">
-    <h2>{{ character.name }}</h2>
-    <h3 *ngIf="character.force > 3">Force: {{ character.force }}</h3>
-    <img src="{{ character.avatar }}" />
+<div>
+  <div>
+
+
+  </div>
+  <div>
+
+
   </div>
 </div>
+
+<mat-toolbar>
+  <span>
+    <mat-form-field>
+      <input matInput placeholder="filter" [(ngModel)]="filterBy" (keyup)="filterCharacters()">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="toggleDetails()">{{showDetails ? 'Hide': 'Show'}}
+      Details</button>
+  </span>
+</mat-toolbar>
+
+<mat-list>
+  <mat-list-item *ngFor="let character of characters">
+    <img mat-list-avatar [src]="character.avatar" [title]="character.name" />
+    <h3 mat-line>{{ character.name }}</h3>
+    <div mat-line *ngIf="showDetails">
+      <span>{{ character.gender }}</span>
+      <span> -- {{ character.birth_year }}</span>
+    </div>
+  </mat-list-item>
+
+</mat-list>

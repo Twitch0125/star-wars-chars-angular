@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "@angular/material/prebuild-themes/inidigo-pink.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .flex {
   display: flex;
@@ -13,4 +21,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .items-center {
   align-items: center;
+
 }
+
+img {
+  width: 300px;
+  height: auto;
+}
+
+
+.logo {
+  background-color: white;
+}
+
+// html {
+//   background-color: black;
+//   color: white;
+// }
