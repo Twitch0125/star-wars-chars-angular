@@ -311,16 +311,5 @@ export class CharacterListComponent implements OnInit {
 
     console.log(this.filterBy);
   }
-
-  public filterCharacters() {
-    if (this.filterBy == "") {
-      this.characters = this.charactersData;
-    } else {
-      this.characters = this.charactersData.filter(character =>
-        character.name.toLowerCase().includes(this.filterBy.toLowerCase())
-      );
-    }
-  }
-
   ngOnInit() {}
 }

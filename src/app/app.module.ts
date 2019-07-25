@@ -12,12 +12,26 @@ import {
   MatButtonModule,
   MatInputModule,
   MatFormFieldModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatCardModule,
+  MatIconModule
 } from "@angular/material";
 import { FormsModule } from "@angular/forms";
+import { FilterCharacterPipe } from "./characters/filter-character.pipe";
+import { ForceComponent } from "./characters/force/force.component";
+import { ForLoopPipe } from './characters/for-loop.pipe';
+import { ForLoopDirective } from './characters/for-loop.directive';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, CharacterListComponent],
+  declarations: [
+    AppComponent,
+    WelcomeComponent,
+    CharacterListComponent,
+    FilterCharacterPipe,
+    ForceComponent,
+    ForLoopPipe,
+    ForLoopDirective
+  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -28,7 +42,9 @@ import { FormsModule } from "@angular/forms";
     MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

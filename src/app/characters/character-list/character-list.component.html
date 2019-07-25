@@ -1,32 +1,39 @@
-<div>
-  <div>
-
-
-  </div>
-  <div>
-
-
-  </div>
-</div>
-
 <mat-toolbar>
   <span>
     <mat-form-field>
-      <input matInput placeholder="filter" [(ngModel)]="filterBy" (keyup)="filterCharacters()">
+      <!-- <input matInput placeholder="filter" [(ngModel)]="filterBy" (keyup)="filterCharacters(this.filterBy)"> -->
+      <input matInput placeholder="filter" [(ngModel)]="filterBy">
+
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="toggleDetails()">{{showDetails ? 'Hide': 'Show'}}
       Details</button>
   </span>
 </mat-toolbar>
 
-<mat-list>
-  <mat-list-item *ngFor="let character of characters">
+<!-- <mat-list>
+  <mat-list-item *ngFor="let character of characters | filterCharacter:filterBy">
+
+
     <img mat-list-avatar [src]="character.avatar" [title]="character.name" />
     <h3 mat-line>{{ character.name }}</h3>
     <div mat-line *ngIf="showDetails">
       <span>{{ character.gender }}</span>
       <span> -- {{ character.birth_year }}</span>
+      <swc-force [forceStrength]="character.force"></swc-force>
     </div>
   </mat-list-item>
+</mat-list> -->
 
-</mat-list>
+<div class="myCard flex column items-center" *ngFor="let character of characters | filterCharacter:filterBy">
+  <mat-card>
+    <mat-card-header>
+      <div [ngStyle]="{'background-image': 'character.avatar'}" mat-card-avatar class="charImage"></div>
+      <mat-card-title>{{character.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="character.img">
+    <mat-card-content *ngIf="showDetails">
+      <swc-force></swc-force>
+      {{character.gender}}-{{character.birth_year}}
+    </mat-card-content>
+  </mat-card>
+</div>
