@@ -1,12 +1,12 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { WelcomeComponent } from "./welcome/welcome.component";
-import { CharacterListComponent } from "./characters/character-list/character-list.component";
-import { CommonModule } from "@angular/common";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CharacterListComponent } from './characters/character-list/character-list.component';
+import { CommonModule } from '@angular/common';
 import {
   MatListModule,
   MatButtonModule,
@@ -15,12 +15,10 @@ import {
   MatToolbarModule,
   MatCardModule,
   MatIconModule
-} from "@angular/material";
-import { FormsModule } from "@angular/forms";
-import { FilterCharacterPipe } from "./characters/filter-character.pipe";
-import { ForceComponent } from "./characters/force/force.component";
-import { ForLoopPipe } from './characters/for-loop.pipe';
-import { ForLoopDirective } from './characters/for-loop.directive';
+} from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { FilterCharacterPipe } from './characters/filter-character.pipe';
+import { ForceComponent } from './characters/force/force.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +26,7 @@ import { ForLoopDirective } from './characters/for-loop.directive';
     WelcomeComponent,
     CharacterListComponent,
     FilterCharacterPipe,
-    ForceComponent,
-    ForLoopPipe,
-    ForLoopDirective
+    ForceComponent
   ],
   imports: [
     BrowserModule,

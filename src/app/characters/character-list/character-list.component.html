@@ -24,16 +24,18 @@
   </mat-list-item>
 </mat-list> -->
 
-<div class="myCard flex column items-center" *ngFor="let character of characters | filterCharacter:filterBy">
-  <mat-card>
-    <mat-card-header>
-      <div [ngStyle]="{'background-image': 'character.avatar'}" mat-card-avatar class="charImage"></div>
-      <mat-card-title>{{character.name}}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image [src]="character.img">
-    <mat-card-content *ngIf="showDetails">
-      <swc-force></swc-force>
-      {{character.gender}}-{{character.birth_year}}
-    </mat-card-content>
-  </mat-card>
+<div class="myCard flex column items-center">
+  <div>
+    <mat-card *ngFor="let character of characters | filterCharacter:filterBy">
+      <mat-card-header>
+        <img src={{character.avatar}} mat-card-avatar class="charImage">
+        <mat-card-title>{{character.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]=" character.img">
+      <mat-card-content *ngIf="showDetails">
+        <swc-force></swc-force>
+        {{character.gender}}-{{character.birth_year}}
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

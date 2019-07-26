@@ -11,3 +11,28 @@
 .charImage {
   background-size: cover;
 }
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+
+}
+
+.bg {
+  background-color: yellow;
+}
+
+.mat-card {
+  font-family: 'Fira Sans'
+}
+
+.mat-card-header {
+  padding-bottom: .5em
+}
