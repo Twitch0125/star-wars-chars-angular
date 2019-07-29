@@ -31,7 +31,7 @@
         <img src={{character.avatar}} mat-card-avatar class="charImage">
         <mat-card-title>{{character.name}}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image [src]=" character.img">
+        <img mat-card-image [src]=" character.img" (click)="onCharacterSelected(character)">
       <mat-card-content *ngIf="showDetails">
         <swc-force></swc-force>
         {{character.gender}}-{{character.birth_year}}
